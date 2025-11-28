@@ -19,7 +19,7 @@
 | **Kunjan Manoj Kumar S** | manojkumark@iisc.ac.in |
 
 **Acknowledgement:**
-This project involved the extensive use of AI agents and coding assistants (such as Chantgpt, Gemini, etc.) for generating boilerplate code, debugging assistance, and clarifying complex API/Cloud configuration steps.
+This project involved the extensive use of AI agents and coding assistants (such as Chatgpt, Gemini, etc.) for generating boilerplate code, debugging assistance, and clarifying complex API/Cloud configuration steps.
  
  ---
 
