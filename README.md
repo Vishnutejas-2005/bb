@@ -1,11 +1,11 @@
- # 🚖 TransVahan — Smart CampusTrotter
+ # TransVahan — Smart CampusTrotter
  
  **TransVahan** is a full-stack, real-time campus shuttle platform connecting **Users**, **Drivers**, and **Administrators**.  
  It provides live shuttle tracking, route editing, occupancy analytics, and predictive ETAs — built using Node.js, React, React Native, Firebase, AWS, and Terraform.
  
  ---
 
-## 👨‍💻 Project Details & Team
+## Project Details & Team
 
 * **Course:** DS252 Introduction to Cloud Computing (August 2025 Semester)
 * **Team Name:** StormCrafters
@@ -23,7 +23,7 @@ This project involved the extensive use of AI agents and coding assistants (such
  
  ---
 
-## 🚀 What TransVahan delivers
+## What TransVahan delivers
 - **Automated live ops**: Drivers push telemetry; users see buses live with seats and ETAs; admins monitor everything in real time.
 - **Role-based experiences**: Single mobile app with user/driver modes; dedicated admin portal for operations.
 - **Data-driven insights**: Trip synthesis, reservation aging, analytics/reports endpoints, and alerts keep stakeholders informed.
@@ -31,7 +31,7 @@ This project involved the extensive use of AI agents and coding assistants (such
 
 ---
 
-## 🏗️ Architecture at a Glance
+## Architecture at a Glance
 
 ```mermaid
 flowchart LR
@@ -63,7 +63,7 @@ flowchart LR
 
 ---
 
-## ✨ Key Features
+## Key Features
 
 - **User & Driver App (React Native + Expo)**
   - OTP-based signup/login with password reset.
@@ -89,7 +89,7 @@ flowchart LR
 
 ---
 
- ## 🧭 Project Overview
+ ## Project Overview
  
  | Module | Description |
  |--------|-------------|
@@ -101,7 +101,7 @@ flowchart LR
  ---
  
  
- ## ⚙️ 1. Prerequisites
+ ## 1. Prerequisites
  
  Install the following tools (latest stable versions recommended):
  
@@ -116,7 +116,7 @@ flowchart LR
  
  ---
  
- ## 🌍 2. Repository Setup
+ ## 2. Repository Setup
  
  ```bash
  # Clone repo
@@ -138,7 +138,7 @@ flowchart LR
  ```
  
  
- ## ⚡ 3. Backend Environment Setup
+ ## 3. Backend Environment Setup
  Generate a JWT_SECRET_KEY
  ```bash
  head -c 32 /dev/urandom | base64
@@ -162,7 +162,7 @@ flowchart LR
 
 ---
 
-## 🌩️ 4. Cloud Configuration (AWS)
+## 4. Cloud Configuration (AWS)
  Run the following command in root directory
  ```bash
  
@@ -223,7 +223,7 @@ Run the following command in root directory
  ```
 
 
-## 🧱 5. Infrastructure Deployment (Terraform)
+## 5. Infrastructure Deployment (Terraform)
  In ```./infra``` run the below commands
  ```bash
  
@@ -240,23 +240,23 @@ Run the following command in root directory
 If you get a “BucketAlreadyExists” error, edit ```./infra/terraform.tfvars``` with a globally unique bucket name and rerun terraform apply.
 
 
- ## 🐳 6. Build and Push Backend to AWS ECR
+ ## 6. Build and Push Backend to AWS ECR
  Run the following command in `./backend`
  
  ```bash
  
- # 1️⃣ Authenticate Docker with AWS ECR
+ # 1) Authenticate Docker with AWS ECR
  aws ecr get-login-password --region ap-south-1 | \
    docker login --username AWS --password-stdin <aws_account_id>.dkr.ecr.ap-south-1.amazonaws.com
  
- # 2️⃣ Build the backend Docker image
+ # 2) Build the backend Docker image
  docker build -t transvahan-backend:latest .
  
- # 3️⃣ Tag the image for your ECR repository
+ # 3) Tag the image for your ECR repository
  docker tag transvahan-backend:latest \
    <aws_account_id>.dkr.ecr.ap-south-1.amazonaws.com/<UNIQUE_REPO_NAME>:latest
  
- # 4️⃣ Push the image to ECR
+ # 4) Push the image to ECR
  docker push <aws_account_id>.dkr.ecr.ap-south-1.amazonaws.com/<UNIQUE_REPO_NAME>:latest
   
 ```
@@ -290,7 +290,7 @@ If you get a “BucketAlreadyExists” error, edit ```./infra/terraform.tfvars``
 
 
 
- ## 🌐 8. Build and Deploy Admin Portal
+ ## 8. Build and Deploy Admin Portal
  In the ```./admin-portal``` run the following commands
 
  ```bash
@@ -325,7 +325,7 @@ eas build --platform android --profile production
 
  ```
 
- ## 📲 10. Download and Install the APK
+ ## 10. Download and Install the APK
 
 After the build completes, visit the EAS dashboard link printed in your terminal, or list your builds:
 ```bash
@@ -335,7 +335,7 @@ eas build:list
 Download the .apk, install it on your Android device, and enjoy your working TransVahan app 🚖
  
 
- ## ✅ Quick Reference
+ ## Quick Reference
 
 | Step | Purpose | Command |
 |------|----------|----------|
